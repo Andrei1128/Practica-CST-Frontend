@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="sort">
+    <button nz-button nzType="primary" (click)="SendToSort()">
+      Sort alphabetically
+    </button>
+    <button nz-button nzType="primary" (click)="CancelSort()">Unsort</button>
+  </div>
+  <div>
+  <div class="search">
+    <input
+      nz-input
+      placeholder="Filter"
+      [(ngModel)]="nameSearched"
+      (input)="Erase()"
+    />
+    <button nz-button nzType="primary" (click)="Search()">Apply filter</button>
+  </div>
+  <nz-table [nzData]="listaJocuri">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Release date</th>
+        <th>Developer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let joc of listaJocuri">
+        <td>{{ joc.key }}</td>
+        <td>{{ joc.name }}</td>
+        <td>{{ joc.release }}</td>
+        <td>{{ joc.developer }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+</div>

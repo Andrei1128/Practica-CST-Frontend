@@ -1,0 +1,12 @@
+<nz-card style="width:400px;" [nzTitle]="elem.title" [nzExtra]="extraTemplate">
+    <img [src]="elem.image" alt="" />
+    <p>{{ elem.description }}</p>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Explore</span></button>
+  </ng-template>
+    <nz-modal [(nzVisible)]="isVisible" [nzTitle]="elem.title" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <p>{{elem.modal}}</p>
+      </ng-container>
+    </nz-modal>

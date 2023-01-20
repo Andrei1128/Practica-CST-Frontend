@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.search{
+    display: flex;
+}
+.sort{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.container {
+  height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-items:center;
+}
+nz-table{
+ width: 30vw;
+}
+
