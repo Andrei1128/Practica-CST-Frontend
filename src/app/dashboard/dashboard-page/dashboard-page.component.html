@@ -1,1 +1,56 @@
-<button nz-button nzType="primary" (click)="logout()">LogOut!</button>
+<div class="container">
+  <button class="logout" nz-button nzType="primary" (click)="logout()">
+    LogOut!
+  </button>
+  <h1>My Trips</h1>
+  <div class="searchBar">
+    <input
+      nz-input
+      placeholder="Search by name, description, etc."
+      [(ngModel)]="searched"
+    />
+    <button nz-button nzType="primary" (click)="search()">Search</button>
+  </div>
+  <div class="sort">
+    <div class="add">
+      Sort by:
+      <button class="sortbtn" nz-button nz-dropdown [nzDropdownMenu]="menu">
+        {{ selectedItem }}<span nz-icon nzType="down"></span>
+      </button>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item (click)="selectedItem = 'Name'">Name</li>
+          <li nz-menu-item (click)="selectedItem = 'Country'">Country</li>
+          <li nz-menu-item (click)="selectedItem = 'Rating'">Rating</li>
+          <li nz-menu-item (click)="selectedItem = 'Expenses'">Expenses</li>
+        </ul>
+      </nz-dropdown-menu>
+      <span class="arrow" nz-icon [nzType]="iconType" (click)="sort()"></span>
+    </div>
+    <div>
+      <button nz-button [nzType]="'primary'" (click)="showModal()">
+        Add trip
+      </button>
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        nzTitle="Add a trip"
+        (nzOnCancel)="modalCancel()"
+        (nzOnOk)="addNewTrip()"
+      >
+        <ng-container *nzModalContent>
+          <input nz-input placeholder="Name" [(ngModel)]="name" />
+          <input nz-input placeholder="Country" [(ngModel)]="country" />
+          <p class="rating">Rating:  <nz-rate [(ngModel)]="rating"></nz-rate></p>
+          <input nz-input placeholder="Expenses" [(ngModel)]="expenses" />
+          <input nz-input placeholder="Notes" [(ngModel)]="notes" />
+        </ng-container>
+      </nz-modal>
+    </div>
+  </div>
+  <div class="trips">
+    <app-trip-card
+      *ngFor="let trip of tripList"
+      [trip]="trip"
+    ></app-trip-card>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -16,6 +17,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   showServerError: boolean = false;
+  showPasswordNotMatch: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,22 +28,24 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
-      password: [null, [Validators.required, Validators.minLength(6)]],
-      checkPassword: [null, [Validators.required, Validators.minLength(6)]],
+      password: [null, [Validators.required, this.passwordValidator]],
+      checkPassword: [null, [Validators.required,this.passwordValidator]],
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
     });
   }
-  
+
   toLogin() {
     this.router.navigate(['auth']);
   }
+
   register(): void {
+    if (this.password.value !== this.checkPassword.value)
+      this.checkPassword.setErrors({'required': true});
     if (this.registerForm.invalid) return;
     const payload = {
       email: this.email.value,
       password: this.password.value,
-      checkPassword: this.checkPassword.value,
       firstName: this.firstName.value,
       lastName: this.lastName.value,
     };
@@ -54,6 +58,15 @@ export class RegisterComponent implements OnInit {
         this.showServerError = true;
       },
     });
+  }
+
+  passwordValidator(control: AbstractControl) {
+    const password = control.value;
+    const valid = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.{8,})/.test(
+      password
+    );
+    if (!valid) return { passwordInvalid: true };
+    return null;
   }
 
   get email(): FormControl {

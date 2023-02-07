@@ -1,0 +1,28 @@
+{
+  "trips": [
+    {
+      "name": "",
+      "country": "",
+      "rating": 0,
+      "expenses": "",
+      "notes": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "country": "",
+      "rating": 0,
+      "expenses": "",
+      "notes": "",
+      "id": 2
+    },
+    {
+      "name": "asd",
+      "country": "asd",
+      "rating": 3,
+      "expenses": "asd",
+      "notes": "asd",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+.trips {
+  display: grid;
+  width: 80vw;
+  gap: 1rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  margin-bottom: 100px;
+}
+.logout {
+  margin: 30px;
+  margin-bottom: -10px;
+  align-self: flex-end;
+}
+.searchBar {
+  width: 500px;
+}
+input{
+  margin: 0 5px 15px 0;
+}
+button {
+  width: 80px;
+}
+.form {
+  display: flex;
+  margin-bottom: 20px;
+  input {
+    width: 300px;
+    margin-right: 20px;
+  }
+}
+.sort {
+  margin: 25px 0 30px 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(rgb(100, 100, 100), 0.15);
+  padding: 20px 30px;
+  width: 80vw;
+}
+.arrow{
+  margin-left: 12px;
+  cursor: pointer;
+}
+.rating{
+  margin: -5px 0 15px 5px
+}
+.add{
+  margin-left: 17vw;
+}
+.searchBar {
+  display: flex;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+}.sortbtn{
+  width: auto;
+  padding-right: 5px;
+}

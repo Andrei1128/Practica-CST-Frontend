@@ -3,14 +3,14 @@
       <div class="wrapper">
       <h3>Register</h3>
       <nz-form-item>
-        <nz-form-control nzErrorTip="Email is missing or invalid">
+        <nz-form-control nzErrorTip="Email is missing or invalid!">
           <nz-input-group nzPrefixIcon="user">
             <input nz-input type="email" placeholder="E-mail" [formControl]="email" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-control nzErrorTip="Password should have at least 6 characters">
+        <nz-form-control nzErrorTip= "Requires at least 1 lowercase, 1 uppercase, 1 special character and lenght of 8">
           <nz-input-group nzPrefixIcon="lock">
             <input nz-input type="password" placeholder="Password" [formControl]="password" />
           </nz-input-group>
