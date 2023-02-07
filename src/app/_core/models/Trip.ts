@@ -4,4 +4,5 @@ export interface Trip {
   rating: number;
   expenses: number;
   notes: string;
+  [key: string]: any;
 }

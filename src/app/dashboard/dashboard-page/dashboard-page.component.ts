@@ -10,7 +10,8 @@ import { TripsService } from 'src/app/_core/services/trips.service';
 })
 export class DashboardPageComponent implements OnInit {
   tripList: Trip[] = [];
-  selectedItem = 'Standard';
+  selectedItem = 'entry';
+  lastSelected = 'entry';
   iconType = 'caret-up';
   searched: string = '';
   searchTerm: string = '';
@@ -36,7 +37,7 @@ export class DashboardPageComponent implements OnInit {
   }
   search() {
     if (this.searched == '') return this.ngOnInit();
-   this.searchTerm = this.searched.toLowerCase();
+    this.searchTerm = this.searched.toLowerCase();
     this.tripsService.getTrips().subscribe((res) => {
       this.tripList = res.filter((trip: any) => {
         return (
@@ -51,11 +52,24 @@ export class DashboardPageComponent implements OnInit {
   }
   removeSearch() {
     this.searched = '';
-    this.searchTerm=this.searched;
+    this.searchTerm = this.searched;
     this.ngOnInit();
+    this.selectedItem = 'entry';
+    this.lastSelected = this.selectedItem;
+    this.iconType = 'caret-up';
   }
   sort() {
-    this.iconType = this.iconType === 'caret-up' ? 'caret-down' : 'caret-up';
+    if (this.lastSelected == this.selectedItem) {
+      this.iconType = this.iconType === 'caret-up' ? 'caret-down' : 'caret-up';
+      this.tripList.reverse();
+    } else {
+      this.lastSelected = this.selectedItem;
+      this.iconType = 'caret-up';
+      if (this.selectedItem === 'entry') return this.ngOnInit();
+      this.tripList.sort((a, b) =>
+        a[this.selectedItem] > b[this.selectedItem] ? 1 : -1
+      );
+    }
   }
   deleteTrip(tripInfo: any) {
     this.tripsService.deleteTrip(tripInfo.id).subscribe({

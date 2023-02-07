@@ -20,11 +20,11 @@
       </button>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
-          <li nz-menu-item (click)="selectedItem = 'Standard'">Standard</li>
-          <li nz-menu-item (click)="selectedItem = 'Name'">Name</li>
-          <li nz-menu-item (click)="selectedItem = 'Country'">Country</li>
-          <li nz-menu-item (click)="selectedItem = 'Rating'">Rating</li>
-          <li nz-menu-item (click)="selectedItem = 'Expenses'">Expenses</li>
+          <li nz-menu-item (click)="selectedItem = 'entry';sort()">entry</li>
+          <li nz-menu-item (click)="selectedItem = 'name';sort()">name</li>
+          <li nz-menu-item (click)="selectedItem = 'country';sort()">country</li>
+          <li nz-menu-item (click)="selectedItem = 'rating';sort()">rating</li>
+          <li nz-menu-item (click)="selectedItem = 'expenses';sort()">expenses</li>
         </ul>
       </nz-dropdown-menu>
       <span class="arrow" nz-icon [nzType]="iconType" (click)="sort()"></span>

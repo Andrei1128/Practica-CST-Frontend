@@ -1,76 +1,44 @@
 {
   "trips": [
     {
-      "name": "",
-      "country": "",
-      "rating": 0,
-      "expenses": "",
+      "name": "a",
+      "country": "m",
+      "rating": 2,
+      "expenses": "1",
       "notes": "",
-      "id": 3
+      "id": 1
     },
     {
-      "name": "",
+      "name": "b",
+      "country": "n",
+      "rating": 1,
+      "expenses": "12",
+      "notes": "",
+      "id": 2
+    },
+    {
+      "name": "asd",
       "country": "",
-      "rating": 0,
+      "rating": 5,
       "expenses": "",
       "notes": "",
       "id": 5
     },
     {
-      "name": "ber",
+      "name": "asd",
       "country": "",
-      "rating": 0,
+      "rating": 3,
       "expenses": "",
       "notes": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "country": "asd",
-      "rating": 0,
-      "expenses": "",
-      "notes": "",
-      "id": 8
-    },
-    {
-      "name": "ber",
-      "country": "asd",
-      "rating": 0,
-      "expenses": "",
-      "notes": "",
-      "id": 9
+      "id": 6
     },
     {
       "name": "asd",
       "country": "",
-      "rating": 0,
+      "rating": 4,
       "expenses": "",
       "notes": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "country": "",
-      "rating": 0,
-      "expenses": "",
-      "notes": "",
-      "id": 12
-    },
-    {
-      "name": "a",
-      "country": "",
-      "rating": 0,
-      "expenses": "",
-      "notes": "",
-      "id": 13
-    },
-    {
-      "name": "a",
-      "country": "",
-      "rating": 0,
-      "expenses": "",
-      "notes": "",
-      "id": 14
+      "id": 8
     }
   ]
 }
