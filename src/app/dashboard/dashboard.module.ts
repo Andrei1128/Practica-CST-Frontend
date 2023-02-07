@@ -14,7 +14,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 
 @NgModule({
-  declarations: [DashboardPageComponent, TripCardComponent,],
+  declarations: [DashboardPageComponent, TripCardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

@@ -1,4 +1,3 @@
-import { TripsService } from './../../_core/services/trips.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -8,19 +7,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TripCardComponent implements OnInit {
   @Input() trip: any;
-  @Output() clickedMore = new EventEmitter<any>();
-  constructor(private tripsService: TripsService) {}
+  @Output() delete = new EventEmitter<any>();
+  constructor() {}
 
   ngOnInit(): void {}
 
-  navigateToTripPage() {
-    this.clickedMore.emit();
-  }
   deleteTrip() {
-    this.tripsService.deleteTrip(this.trip.id).subscribe({
-      next: () => {
-        window.location.reload();
-      },
-    });
+    this.delete.emit();
   }
 }

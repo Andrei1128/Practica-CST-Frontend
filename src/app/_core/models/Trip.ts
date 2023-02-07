@@ -1,7 +1,7 @@
 export interface Trip {
   name: string;
   country: string;
-  rate: number;
+  rating: number;
   expenses: number;
   notes: string;
 }

@@ -6,10 +6,11 @@
   <div class="searchBar">
     <input
       nz-input
-      placeholder="Search by name, description, etc."
+      placeholder="Search by name, country, expenses, rating, notes..."
       [(ngModel)]="searched"
-    />
+    /> 
     <button nz-button nzType="primary" (click)="search()">Search</button>
+    <div *ngIf="searched!=''"><span class="cancelSearch" nz-icon nzType="close" (click)="removeSearch()"></span></div>
   </div>
   <div class="sort">
     <div class="add">
@@ -19,6 +20,7 @@
       </button>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
+          <li nz-menu-item (click)="selectedItem = 'Standard'">Standard</li>
           <li nz-menu-item (click)="selectedItem = 'Name'">Name</li>
           <li nz-menu-item (click)="selectedItem = 'Country'">Country</li>
           <li nz-menu-item (click)="selectedItem = 'Rating'">Rating</li>
@@ -51,6 +53,7 @@
     <app-trip-card
       *ngFor="let trip of tripList"
       [trip]="trip"
+      (delete)="deleteTrip(trip)"
     ></app-trip-card>
   </div>
 </div>
