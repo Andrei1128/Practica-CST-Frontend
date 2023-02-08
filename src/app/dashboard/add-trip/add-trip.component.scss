@@ -1,0 +1,18 @@
+.rating {
+  margin-top: -10px;
+  p {
+    user-select: none;
+    margin-bottom: -10px;
+  }
+  nz-form-control {
+    margin-bottom: 3px;
+  }
+}
+input {
+  width: 98%;
+}
+.dollar {
+  position: relative;
+  right: 20px;
+  color: gray;
+}

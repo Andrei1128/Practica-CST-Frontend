@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
-  showServerError: boolean = false;
+  showError: boolean = false;
   showPasswordNotMatch: boolean = false;
 
   constructor(
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['dashboard']);
       },
       error: () => {
-        this.showServerError = true;
+        this.showError = true;
       },
     });
   }

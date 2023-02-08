@@ -2,12 +2,11 @@
   <h3>{{ trip.name }}</h3>
   <p>{{ trip.country }}</p>
   <p class="stars"><nz-rate [ngModel]="trip.rating" nzDisabled></nz-rate></p>
-  <p>{{ trip.expenses }}</p>
+  <p>{{ trip.expenses }} $</p>
   <p>{{ trip.notes }}</p>
 </nz-card>
 <ng-template #coverTemplate>
   <img
-    height="200px"
     src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
   />
 </ng-template>

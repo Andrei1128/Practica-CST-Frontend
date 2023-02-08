@@ -1,44 +1,21 @@
 {
   "trips": [
     {
-      "name": "a",
-      "country": "m",
-      "rating": 2,
-      "expenses": "1",
-      "notes": "",
+      "name": "asd",
+      "country": "asds",
+      "rating": 3,
+      "expenses": "1.202020202",
+      "notes": "adsasdasdaasdasd",
       "id": 1
     },
     {
-      "name": "b",
-      "country": "n",
-      "rating": 1,
-      "expenses": "12",
-      "notes": "",
-      "id": 2
-    },
-    {
       "name": "asd",
-      "country": "",
-      "rating": 5,
-      "expenses": "",
-      "notes": "",
-      "id": 5
-    },
-    {
-      "name": "asd",
-      "country": "",
+      "country": "asdasdasd",
       "rating": 3,
-      "expenses": "",
-      "notes": "",
-      "id": 6
-    },
-    {
-      "name": "asd",
-      "country": "",
-      "rating": 4,
-      "expenses": "",
-      "notes": "",
-      "id": 8
+      "expenses": "1",
+      "notes": "asdasdasdasdasdasd",
+      "id": 3,
+      "image": "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
     }
   ]
 }

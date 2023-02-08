@@ -16,13 +16,6 @@ export class DashboardPageComponent implements OnInit {
   searched: string = '';
   searchTerm: string = '';
 
-  name: string = '';
-  country: string = '';
-  rating: number = 0;
-  expenses: string = '';
-  notes: string = '';
-  isVisible = false;
-
   constructor(private router: Router, private tripsService: TripsService) {}
 
   ngOnInit(): void {
@@ -78,20 +71,7 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
-  showModal(): void {
-    this.isVisible = true;
-  }
-  modalCancel() {
-    this.isVisible = false;
-  }
-  addNewTrip(): void {
-    const tripInfo = {
-      name: this.name,
-      country: this.country,
-      rating: this.rating,
-      expenses: this.expenses,
-      notes: this.notes,
-    };
+  addTrip(tripInfo:any) {
     this.tripsService.addTrip(tripInfo).subscribe((res) => {
       if (
         this.searchTerm == '' ||
@@ -103,6 +83,5 @@ export class DashboardPageComponent implements OnInit {
       )
         this.tripList.push(res);
     });
-    this.isVisible = false;
   }
 }
