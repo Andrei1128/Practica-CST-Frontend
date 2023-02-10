@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Trip } from 'src/app/_core/models/Trip';
 import { TripsService } from 'src/app/_core/services/trips.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { TripsService } from 'src/app/_core/services/trips.service';
   styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent implements OnInit {
-  tripList: Trip[] = [];
+  tripList: any[];
   selectedItem = 'entry';
   lastSelected = 'entry';
   iconType = 'caret-up';
@@ -71,7 +70,7 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
-  addTrip(tripInfo:any) {
+  addTrip(tripInfo: any) {
     this.tripsService.addTrip(tripInfo).subscribe((res) => {
       if (
         this.searchTerm == '' ||

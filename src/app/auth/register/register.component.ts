@@ -15,9 +15,9 @@ import { Router } from '@angular/router';
   styleUrls: ['../auth.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup = new FormGroup({});
-  showError: boolean = false;
-  showPasswordNotMatch: boolean = false;
+  registerForm: FormGroup;
+  showError: boolean;
+  showPasswordNotMatch: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, this.passwordValidator]],
-      checkPassword: [null, [Validators.required,this.passwordValidator]],
+      checkPassword: [null, [Validators.required, this.passwordValidator]],
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
     });
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     if (this.password.value !== this.checkPassword.value)
-      this.checkPassword.setErrors({'required': true});
+      this.checkPassword.setErrors({ required: true });
     if (this.registerForm.invalid) return;
     const payload = {
       email: this.email.value,

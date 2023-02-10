@@ -33,6 +33,12 @@
           <input nz-input placeholder="Notes" [formControl]="notes" />
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="fileInput">
+          <input class="filePicker" type="file" (change)="uploadImage($event)" />
+        <p class="warning" *ngIf="incorrectFile">
+          Chosed file is not an image!
+        </p>
+      </nz-form-item>
     </form>
   </ng-container>
 </nz-modal>

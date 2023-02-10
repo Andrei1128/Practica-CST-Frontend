@@ -14,9 +14,9 @@ import { AuthService } from 'src/app/_core/services/auth.service';
   styleUrls: ['../auth.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({});
-  showServerError: boolean = false;
-  rememberMe: boolean = false;
+  loginForm: FormGroup ;
+  showServerError: boolean;
+  rememberMe: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
