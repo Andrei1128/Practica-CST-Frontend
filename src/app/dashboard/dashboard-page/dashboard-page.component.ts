@@ -18,6 +18,21 @@ export class DashboardPageComponent implements OnInit {
   constructor(private router: Router, private tripsService: TripsService) {}
 
   ngOnInit(): void {
+<<<<<<< HEAD
+    this.getTrips();
+  }
+  getTrips() {
+    this.tripsService.getTrips().subscribe((res) => {
+      this.tripList = res;
+      if (this.selectedItem == 'entry') {
+        if (this.iconType == 'caret-down') this.tripList.reverse();
+      } else this.sort(false);
+    });
+  }
+  search() {
+    if (this.searched.toLowerCase() == this.searchTerm) return;
+    if (this.searched == '') return this.removeSearch();
+=======
     this.tripsService.getTrips().subscribe((res) => {
       this.tripList = res;
     });
@@ -29,6 +44,7 @@ export class DashboardPageComponent implements OnInit {
   }
   search() {
     if (this.searched == '') return this.ngOnInit();
+>>>>>>> origin/proiect
     this.searchTerm = this.searched.toLowerCase();
     this.tripsService.getTrips().subscribe((res) => {
       this.tripList = res.filter((trip: any) => {
@@ -40,10 +56,46 @@ export class DashboardPageComponent implements OnInit {
           trip.notes.toLowerCase().includes(this.searchTerm)
         );
       });
+<<<<<<< HEAD
+      this.sort(false);
+=======
+>>>>>>> origin/proiect
     });
   }
   removeSearch() {
     this.searched = '';
+<<<<<<< HEAD
+    this.searchTerm = '';
+    this.getTrips();
+  }
+  sort(bool: boolean) {
+    if (bool && this.lastSelected == this.selectedItem) {
+      this.iconType = this.iconType == 'caret-up' ? 'caret-down' : 'caret-up';
+      this.tripList.reverse();
+    } else {
+      this.lastSelected = this.selectedItem;
+      if (this.selectedItem == 'entry') {
+        if (this.iconType == 'caret-up')
+          this.tripList.sort((a, b) => (a['id'] > b['id'] ? 1 : -1));
+        else this.tripList.sort((a, b) => (a['id'] < b['id'] ? 1 : -1));
+      } else if (this.iconType == 'caret-up') {
+        this.tripList.sort((a, b) =>
+          a[this.selectedItem] > b[this.selectedItem] ? 1 : -1
+        );
+      } else
+        this.tripList.sort((a, b) =>
+          a[this.selectedItem] < b[this.selectedItem] ? 1 : -1
+        );
+    }
+  }
+  deleteTrip(id: number) {
+    this.tripsService
+      .deleteTrip(id)
+      .subscribe(
+        () => (this.tripList = this.tripList.filter((trip) => trip.id != id))
+      );
+  }
+=======
     this.searchTerm = this.searched;
     this.ngOnInit();
     this.selectedItem = 'entry';
@@ -70,6 +122,7 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
+>>>>>>> origin/proiect
   addTrip(tripInfo: any) {
     this.tripsService.addTrip(tripInfo).subscribe((res) => {
       if (
@@ -83,4 +136,12 @@ export class DashboardPageComponent implements OnInit {
         this.tripList.push(res);
     });
   }
+<<<<<<< HEAD
+  logout() {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+    this.router.navigate(['auth']);
+  }
+=======
+>>>>>>> origin/proiect
 }
