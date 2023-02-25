@@ -20,7 +20,6 @@
       </button>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
-<<<<<<< HEAD
           <li nz-menu-item (click)="selectedItem = 'entry';sort(true)">entry</li>
           <li nz-menu-item (click)="selectedItem = 'name';sort(true)">name</li>
           <li nz-menu-item (click)="selectedItem = 'country';sort(true)">country</li>
@@ -29,7 +28,6 @@
         </ul>
       </nz-dropdown-menu>
       <span class="arrow" nz-icon [nzType]="iconType" (click)="sort(true)"></span>
-=======
           <li nz-menu-item (click)="selectedItem = 'entry';sort()">entry</li>
           <li nz-menu-item (click)="selectedItem = 'name';sort()">name</li>
           <li nz-menu-item (click)="selectedItem = 'country';sort()">country</li>
@@ -38,7 +36,6 @@
         </ul>
       </nz-dropdown-menu>
       <span class="arrow" nz-icon [nzType]="iconType" (click)="sort()"></span>
->>>>>>> origin/proiect
     </div>
     <div>
       <app-add-trip (add)="addTrip($event)"></app-add-trip>
@@ -48,11 +45,8 @@
     <app-trip-card
       *ngFor="let trip of tripList"
       [trip]="trip"
-<<<<<<< HEAD
       (delete)="deleteTrip(trip.id)"
-=======
       (delete)="deleteTrip(trip)"
->>>>>>> origin/proiect
     ></app-trip-card>
   </div>
 </div>
