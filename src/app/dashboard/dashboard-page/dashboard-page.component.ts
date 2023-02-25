@@ -18,7 +18,6 @@ export class DashboardPageComponent implements OnInit {
   constructor(private router: Router, private tripsService: TripsService) {}
 
   ngOnInit(): void {
-<<<<<<< HEAD
     this.getTrips();
   }
   getTrips() {
@@ -32,7 +31,6 @@ export class DashboardPageComponent implements OnInit {
   search() {
     if (this.searched.toLowerCase() == this.searchTerm) return;
     if (this.searched == '') return this.removeSearch();
-=======
     this.tripsService.getTrips().subscribe((res) => {
       this.tripList = res;
     });
@@ -44,7 +42,6 @@ export class DashboardPageComponent implements OnInit {
   }
   search() {
     if (this.searched == '') return this.ngOnInit();
->>>>>>> origin/proiect
     this.searchTerm = this.searched.toLowerCase();
     this.tripsService.getTrips().subscribe((res) => {
       this.tripList = res.filter((trip: any) => {
@@ -56,15 +53,11 @@ export class DashboardPageComponent implements OnInit {
           trip.notes.toLowerCase().includes(this.searchTerm)
         );
       });
-<<<<<<< HEAD
       this.sort(false);
-=======
->>>>>>> origin/proiect
     });
   }
   removeSearch() {
     this.searched = '';
-<<<<<<< HEAD
     this.searchTerm = '';
     this.getTrips();
   }
@@ -95,7 +88,6 @@ export class DashboardPageComponent implements OnInit {
         () => (this.tripList = this.tripList.filter((trip) => trip.id != id))
       );
   }
-=======
     this.searchTerm = this.searched;
     this.ngOnInit();
     this.selectedItem = 'entry';
@@ -121,8 +113,6 @@ export class DashboardPageComponent implements OnInit {
         (this.tripList = this.tripList.filter((trip) => trip !== tripInfo)),
     });
   }
-
->>>>>>> origin/proiect
   addTrip(tripInfo: any) {
     this.tripsService.addTrip(tripInfo).subscribe((res) => {
       if (
@@ -136,12 +126,9 @@ export class DashboardPageComponent implements OnInit {
         this.tripList.push(res);
     });
   }
-<<<<<<< HEAD
   logout() {
     window.localStorage.clear();
     window.sessionStorage.clear();
     this.router.navigate(['auth']);
   }
-=======
->>>>>>> origin/proiect
 }
