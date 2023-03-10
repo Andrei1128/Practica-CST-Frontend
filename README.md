@@ -1,27 +1,25 @@
-# Proiect
+#Cerințe proiect Angular - UTC 2022
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+•	Login + Register - 3p
+•	Formularul de login: email, parola, checkbox pentru ‘Remember me’
+•	Formularul de register: email, parola, confirmarea parolei, nume, prenume
+•	Formularele trebuie sa valideze datele (de ex. trebuie sa contina cel putin 6 caractere, un email valid, ambele campuri sa fie completate)
+•	Conectare la un Fake Api (ex.: https://reqres.in/) sau Api
+•	Proiectul trebuie sa contina cel putin doua module (in afara de app.module), cel putin unul dintre el trebuie incarcat folosind lazy-loading - 0.5p
+•	Proiectul trebuie sa contina cel putin o instanta de @Input si de @Output si un service - 0.5p
+•	Implementarea unei liste (tabel/carduri) - 3p
+•	Lista trebuie sa contina cel putin 5 coloane (ex. nume, prenume, email, telefon, oras)
+•	Utilizatorul va avea posibilitatea de a introduce intrari in lista, printr-un formular (care va contine validatori)
+•	Utilizatorul va putea cauta un anumit rezultat din lista, folosind un searchbar
+•	Pentru fiecare intrare din lista, va exista un buton care va sterge intrarea respectivă
+•	Tabelul va putea fi sortat dupa fiecare coloana
+•	Adaugarea unei librării pentru componentele de UI, la alegere (ex. Bootstrap, Material) - 1p
+•	Cod curat, corect din punct de vedere al dezvoltarii unui proiect in Angular (construirea de componente unde este nevoie, folosirea corespunzatoare a serviciilor, impartirea pe module a functionalitatilor, etc) - 0.5p
+•	Aspect placut, fara bug-uri, idee interesanta - 0.5p
+•	1p oficiu
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##Bonus points: 
+•	Implementarea unei functionalitati in plus care nu a fost explicata la curs - 1p
+•	Adaugarea si folosirea unei librarii, la alegere 
+(se exclude libraria pentru elemente de UI) - 1p
+•	Doar pagina de login sa fie disponibila utilizatorilor neinregistrati - 0.5
