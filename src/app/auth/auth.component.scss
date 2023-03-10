@@ -2,7 +2,8 @@
   width: 200px;
 }
 
-.form, .wrapper {
+.form,
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,9 +42,11 @@ h3 {
   0% {
     background-position: left;
   }
+
   50% {
     background-position: right;
   }
+
   100% {
     background-position: left;
   }
@@ -51,4 +54,10 @@ h3 {
 
 p {
   align-self: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 30px 45px;
+  }
 }

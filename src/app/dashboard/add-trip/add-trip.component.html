@@ -1,4 +1,4 @@
-<button nz-button [nzType]="'primary'" (click)="showModal()">Add trip</button>
+<button nz-button class="addbtn" [nzType]="'primary'" (click)="showModal()">Add trip</button>
 <nz-modal [(nzVisible)]="isVisible" nzTitle="Add a trip" (nzOnCancel)="modalCancel()" (nzOnOk)="addTrip()">
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="addTripForm">

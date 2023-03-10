@@ -1,3 +1,5 @@
+<h1>Pentru rulare: "json-server db.json --watch" si "npm start" </h1>
+
 <h1>Cerințe proiect Angular - UTC 2022</h1>
 <h2>Login + Register - 3p</h2>
 <p>Formularul de login: email, parola, checkbox pentru ‘Remember me’</p>

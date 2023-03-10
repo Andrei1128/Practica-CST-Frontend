@@ -30,7 +30,6 @@
     </div>
   </div>
   <div class="trips">
-    <app-trip-card *ngFor="let trip of tripList" [trip]="trip" (delete)="deleteTrip(trip.id)"
-      (delete)="deleteTrip(trip)"></app-trip-card>
+    <app-trip-card *ngFor="let trip of tripList" [trip]="trip" (delete)="deleteTrip(trip)"></app-trip-card>
   </div>
 </div>
