@@ -30,7 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NzModalModule,
     NzRateModule,
     NzFormModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class DashboardModule {}

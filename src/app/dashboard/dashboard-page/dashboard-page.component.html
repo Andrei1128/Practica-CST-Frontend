@@ -4,11 +4,7 @@
   </button>
   <h1>My Trips</h1>
   <div class="searchBar">
-    <input
-      nz-input
-      placeholder="Search by name, country, expenses, rating, notes..."
-      [(ngModel)]="searched"
-    /> 
+    <input nz-input placeholder="Search by name, country, expenses, rating, notes..." [(ngModel)]="searched" />
     <button nz-button nzType="primary" (click)="search()">Search</button>
     <div *ngIf="searched!=''"><span class="cancelSearch" nz-icon nzType="close" (click)="removeSearch()"></span></div>
   </div>
@@ -28,25 +24,13 @@
         </ul>
       </nz-dropdown-menu>
       <span class="arrow" nz-icon [nzType]="iconType" (click)="sort(true)"></span>
-          <li nz-menu-item (click)="selectedItem = 'entry';sort()">entry</li>
-          <li nz-menu-item (click)="selectedItem = 'name';sort()">name</li>
-          <li nz-menu-item (click)="selectedItem = 'country';sort()">country</li>
-          <li nz-menu-item (click)="selectedItem = 'rating';sort()">rating</li>
-          <li nz-menu-item (click)="selectedItem = 'expenses';sort()">expenses</li>
-        </ul>
-      </nz-dropdown-menu>
-      <span class="arrow" nz-icon [nzType]="iconType" (click)="sort()"></span>
     </div>
     <div>
       <app-add-trip (add)="addTrip($event)"></app-add-trip>
     </div>
   </div>
   <div class="trips">
-    <app-trip-card
-      *ngFor="let trip of tripList"
-      [trip]="trip"
-      (delete)="deleteTrip(trip.id)"
-      (delete)="deleteTrip(trip)"
-    ></app-trip-card>
+    <app-trip-card *ngFor="let trip of tripList" [trip]="trip" (delete)="deleteTrip(trip.id)"
+      (delete)="deleteTrip(trip)"></app-trip-card>
   </div>
 </div>

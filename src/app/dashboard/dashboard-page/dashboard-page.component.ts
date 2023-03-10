@@ -29,18 +29,6 @@ export class DashboardPageComponent implements OnInit {
     });
   }
   search() {
-    if (this.searched.toLowerCase() == this.searchTerm) return;
-    if (this.searched == '') return this.removeSearch();
-    this.tripsService.getTrips().subscribe((res) => {
-      this.tripList = res;
-    });
-  }
-  logout() {
-    window.localStorage.clear();
-    window.sessionStorage.clear();
-    this.router.navigate(['auth']);
-  }
-  search() {
     if (this.searched == '') return this.ngOnInit();
     this.searchTerm = this.searched.toLowerCase();
     this.tripsService.getTrips().subscribe((res) => {
@@ -79,32 +67,6 @@ export class DashboardPageComponent implements OnInit {
         this.tripList.sort((a, b) =>
           a[this.selectedItem] < b[this.selectedItem] ? 1 : -1
         );
-    }
-  }
-  deleteTrip(id: number) {
-    this.tripsService
-      .deleteTrip(id)
-      .subscribe(
-        () => (this.tripList = this.tripList.filter((trip) => trip.id != id))
-      );
-  }
-    this.searchTerm = this.searched;
-    this.ngOnInit();
-    this.selectedItem = 'entry';
-    this.lastSelected = this.selectedItem;
-    this.iconType = 'caret-up';
-  }
-  sort() {
-    if (this.lastSelected == this.selectedItem) {
-      this.iconType = this.iconType === 'caret-up' ? 'caret-down' : 'caret-up';
-      this.tripList.reverse();
-    } else {
-      this.lastSelected = this.selectedItem;
-      this.iconType = 'caret-up';
-      if (this.selectedItem === 'entry') return this.ngOnInit();
-      this.tripList.sort((a, b) =>
-        a[this.selectedItem] > b[this.selectedItem] ? 1 : -1
-      );
     }
   }
   deleteTrip(tripInfo: any) {

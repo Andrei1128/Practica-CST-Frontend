@@ -1,10 +1,5 @@
 <button nz-button [nzType]="'primary'" (click)="showModal()">Add trip</button>
-<nz-modal
-  [(nzVisible)]="isVisible"
-  nzTitle="Add a trip"
-  (nzOnCancel)="modalCancel()"
-  (nzOnOk)="addTrip()"
->
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Add a trip" (nzOnCancel)="modalCancel()" (nzOnOk)="addTrip()">
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="addTripForm">
       <nz-form-item>
@@ -34,7 +29,7 @@
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="fileInput">
-          <input class="filePicker" type="file" (change)="uploadImage($event)" />
+        <input class="filePicker" type="file" (change)="uploadImage($event)" />
         <p class="warning" *ngIf="incorrectFile">
           Chosed file is not an image!
         </p>
